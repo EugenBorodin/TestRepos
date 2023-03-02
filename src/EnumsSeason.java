@@ -47,7 +47,26 @@ public class EnumsSeason {
     return months;
   }
 
-
+public static Season findSeason(Month month) {
+    switch (month) {
+      case DECEMBER:
+      case JANUARY:
+      case FEBRUARY:
+        return Season.WINTER;
+      case MARCH:
+      case APRIL:
+      case MAY:
+        return Season.SPRING;
+      case JULY:
+      case JUNE:
+      case AUGUST:
+        return Season.SUMMER;
+      case OCTOBER:
+      case NOVEMBER:
+      case SEPTEMBER:
+        return Season.FALL
+    }
+  }
 
 
   public static void main(String[] args) throws IOException {
