@@ -48,24 +48,12 @@ public class EnumsSeason {
   }
 
 public static Season findSeason(Month month) {
-    switch (month) {
-      case DECEMBER:
-      case JANUARY:
-      case FEBRUARY:
-        return Season.WINTER;
-      case MARCH:
-      case APRIL:
-      case MAY:
-        return Season.SPRING;
-      case JULY:
-      case JUNE:
-      case AUGUST:
-        return Season.SUMMER;
-      case OCTOBER:
-      case NOVEMBER:
-      case SEPTEMBER:
-        return Season.FALL
-    }
+  return switch (month) {
+    case DECEMBER, JANUARY, FEBRUARY -> Season.WINTER;
+    case MARCH, APRIL, MAY -> Season.SPRING;
+    case JULY, JUNE, AUGUST -> Season.SUMMER;
+    case OCTOBER, NOVEMBER, SEPTEMBER -> Season.FALL;
+  };
   }
 
 
