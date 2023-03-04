@@ -70,6 +70,12 @@ public static Season findSeason(Month month) {
     if (monthDays.containsKey(monthToLook)) {
       System.out.printf("The month '%s' contains %d days%n", month, monthDays.get(monthToLook));
       System.out.printf("The month '%s' has ordinal number %d%n", month, monthToLook.ordinal() + 1);
+      System.out.printf("this month is a part of a '%s' season%n",findSeason(monthToLook));
+
+      int nextMonthIndex = (monthToLook.ordinal()+1);
+      Month nextMonth = Month.values()[nextMonthIndex % Month.values().length];
+      System.out.printf("The next month is '%s'%n", nextMonth);
+      System.out.printf("It has %d days", monthDays.get(nextMonth));
     } else {
       System.out.println("No such month: " + month); // Нет такого месяца
     }
